@@ -1,11 +1,11 @@
-import { View, Button,TextInput } from "react-native";
 
-const TestComponent = () => {
+
+const ListComponent = () => {
+
+
     return (
-        <View>
+        <>
             
-        </View>
+        </>
     )
 }
-
-export default TestComponent;
