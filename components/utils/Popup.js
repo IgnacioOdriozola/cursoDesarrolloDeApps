@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Pressable, Modal ,Button} from "react-native";
 import React from "react";
+import colors from "../../constants/colors"
   
 const Popup = (props) => {
     const {item,isVisible, closeModal,deleteItem,finishedItem} = props
@@ -9,8 +10,8 @@ const Popup = (props) => {
             <Text style={styles.inputStyle}>{item?.title}</Text>
             <View style={styles.buttonContainer}>
               <Pressable style={{...styles.button, backgroundColor:"gray"}} onPress={closeModal} ><Text>Cerrar</Text></Pressable>
-              <Pressable style={{...styles.button, backgroundColor:"red"}} onPress={deleteItem}  ><Text>Borrar</Text></Pressable>
-              <Pressable style={{...styles.button, backgroundColor:"green"}} onPress={finishedItem} ><Text>Editar</Text></Pressable>
+              <Pressable style={{...styles.button, backgroundColor:colors.red}} onPress={deleteItem}  ><Text>Borrar</Text></Pressable>
+              <Pressable style={{...styles.button, backgroundColor:colors.green}} onPress={finishedItem} ><Text>Editar</Text></Pressable>
             </View>
         </Modal>
     )

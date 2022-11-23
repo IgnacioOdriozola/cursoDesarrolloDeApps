@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { StyleSheet, View, TextInput,Button, Text, FlatList, Pressable,TouchableOpacity } from 'react-native';
-
+import { useFonts } from 'expo-font';
 import Popup from './components/utils/Popup'
 import Description from './components/description/Description'
 
@@ -10,6 +10,9 @@ export default function App() {
   const [openModal, setOpenModal] = useState(false)
   const [finishedItemLabel, setFinishedItemLabel] = useState(false);
   const [openDescription, setOpenDescription] = useState(false)
+  const [loaded] = useFonts({
+    Comfortaa: require('./assets/fonts/Comfortaa-VariableFont_wght.ttf')
+  })
 
   const changeItem = (item) =>{
     setTextItem({id:itemList.length===0?0:parseInt(itemList[itemList.length-1].id)+1,title: item, description:""})
@@ -51,10 +54,14 @@ export default function App() {
     setOpenDescription(false);
   }
 
+  if(!loaded){
+    return null;
+  }
+
   const selectShoppingList = () => {
     return(
-    <View style={styles.container}>
-        <Text style={{ fontSize: 30 }}>Shopping List</Text>
+    <View style={{...styles.container}}>
+        <Text style={{ fontSize: 30,fontFamily:'Comfortaa' }}>Shopping List</Text>
         <View style={styles.inputcontainer}>
           <TextInput
             value={textItem}
