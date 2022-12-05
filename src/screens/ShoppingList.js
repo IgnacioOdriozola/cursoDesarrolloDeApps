@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { StyleSheet, View, TextInput,Button, Text, FlatList, Pressable,TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
-import Description from './description/Description';
-import Popup from './utils/Popup'
+import Description from '../components/description/Description';
+import Popup from '../components/utils/Popup'
 
 export default ShoppingList = ({navigation}) => {
   const [textItem, setTextItem] = useState();
